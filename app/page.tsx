@@ -145,9 +145,14 @@ export default function ArmorArkWebsite() {
             EST. 2024 • NEXT-GENERATION AI INFRASTRUCTURE
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-semibold tracking-[-3.2px] leading-none mb-6">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+            className="text-6xl md:text-7xl font-semibold tracking-[-3.2px] leading-none mb-6"
+          >
             Fortifying the<br />future of intelligence.
-          </h1>
+          </motion.h1>
           
           <p className="max-w-xl mx-auto text-xl text-zinc-400 mb-10">
             Armor Ark builds secure, high-performance AI systems and intuitive digital experiences that scale.
