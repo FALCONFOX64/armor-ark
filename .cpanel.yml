@@ -7,12 +7,13 @@ deployment:
     # cPanel username: austvrud (document root)
     - export DEPLOYPATH=/home/austvrud/public_html/
 
-    # Clean the live site (removes old files). Comment this out if you want to preserve .htaccess or other files.
-    - /bin/rm -rf $DEPLOYPATH/*
+    # Secure deploy: preserve existing .htaccess and important files.
+    # Only remove generated static files if needed. Using find for safety.
+    - find $DEPLOYPATH -mindepth 1 ! -name '.htaccess' ! -name '.well-known' -delete 2>/dev/null || true
 
-    # Deploy the static Next.js build output.
-    # The GitHub Actions workflow builds this for you automatically.
+    # Deploy the static Next.js build output (built by GitHub Actions).
     - /bin/cp -R out/* $DEPLOYPATH
 
-    # Optional: Preserve specific files (uncomment and adjust if needed)
-    # - /bin/cp -f .htaccess $DEPLOYPATH 2>/dev/null || true
+    # Copy .htaccess from repo root (for security headers, caching, routing).
+    - /bin/cp -f .htaccess $DEPLOYPATH 2>/dev/null || true
+

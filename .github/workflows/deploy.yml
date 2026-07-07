@@ -7,6 +7,10 @@ on:
       - master
   workflow_dispatch:   # Allows manual run from GitHub UI
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -27,6 +31,12 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Prepare static files (include .htaccess for security/caching)
+        run: |
+          cp .htaccess out/ 2>/dev/null || true
+          # Clean any dev files if present in out
+          rm -f out/.env* out/package*.json 2>/dev/null || true
+
       - name: Deploy to cPanel via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
@@ -37,4 +47,12 @@ jobs:
           protocol: ftps
           local-dir: ./out/
           server-dir: public_html/
-          # dangerous-clean-slate: false   # Set to true only if you want to delete all files first (use carefully)
+          exclude: |
+            **/.* 
+            **/*.map
+            **/LICENSE*
+            **/*.LICENSE
+          # Use delete: true to remove files on server that no longer exist locally
+          # delete: true
+          # dangerous-clean-slate: false   # Use with extreme caution - wipes target dir first
+

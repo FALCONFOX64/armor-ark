@@ -23,6 +23,8 @@ In GitHub repo → Settings → Secrets and variables → Actions, add:
 | `FTP_USERNAME`  | `falconfox64@armorark.com` | Full FTP username (provided) |
 | `FTP_PASSWORD`  | (your password)            | (provided earlier) |
 
+**Security:** Never store the FTP password in any committed file. Only use GitHub Secrets.
+
 **Note:** FTP server is now `ftp.austinzierke.com` on port 21 with `protocol: ftps` (explicit FTPS).
 
 **Warning:** Remove the real password from this file before committing to GitHub. Use it only to set the GitHub Secret.

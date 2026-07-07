@@ -21,7 +21,7 @@ You provided:
 - FTP server: **ftp.austinzierke.com**
 - Port: **21** (FTP / explicit FTPS)
 - Username: **falconfox64@armorark.com**
-- Password: **ZXCVmnbv11!!11**
+- Password: (use the one you configured in cPanel - do not store in files)
 
 1. Log into: https://server91.web-hosting.com:2083 (or ftp.austinzierke.com:2083)
 2. Go to **Files → FTP Accounts**
@@ -39,7 +39,7 @@ Add (or verify) these **two** secrets:
    Value: `falconfox64@armorark.com`
 
 2. Name: `FTP_PASSWORD`  
-   Value: (the password you provided: ZXCVmnbv11!!11)
+   Value: (the password you set for the FTP account - never commit it)
 
 **Security note:** These values are for your GitHub repository secrets only. 
 Do NOT commit the actual password in any file that gets pushed to GitHub.
