@@ -21,7 +21,7 @@ In GitHub repo → Settings → Secrets and variables → Actions, add:
 | Secret Name     | Value                              | Notes |
 |-----------------|------------------------------------|-------|
 | `FTP_USERNAME`  | `falconfox64@armorark.com` | Full FTP username (provided) |
-| `FTP_PASSWORD`  | `ZXCVmnbv11!!11`           | (provided) |
+| `FTP_PASSWORD`  | (your password)            | (provided earlier) |
 
 **Note:** FTP server is now `ftp.austinzierke.com` on port 21 with `protocol: ftps` (explicit FTPS).
 

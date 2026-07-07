@@ -39,7 +39,7 @@ Add (or verify) these **two** secrets:
    Value: `falconfox64@armorark.com`
 
 2. Name: `FTP_PASSWORD`  
-   Value: `ZXCVmnbv11!!11`
+   Value: (the password you provided: ZXCVmnbv11!!11)
 
 **Security note:** These values are for your GitHub repository secrets only. 
 Do NOT commit the actual password in any file that gets pushed to GitHub.
