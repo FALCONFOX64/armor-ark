@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
+  --background: #0a1628; /* navy-ish from theme */
   --foreground: #ededed;
-  --accent: #3b82f6;
-  --accent-dark: #2563eb;
-  --card: #111111;
-  --border: #27272a;
+  --accent: #00d4ff; /* exact from ArmorArkTheme */
+  --accent-dark: #00a8cc;
+  --gold: #c9a326;
+  --navy: #0a1628;
+  --steel: #2e4a70;
+  --surface: #142338;
+  --surface-elevated: #1c2b47;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --card: #111827;
+  --border: #1f2937;
 }
 
 @theme inline {
@@ -18,11 +25,13 @@
 
 body {
   font-family: var(--font-geist-sans);
+  background: var(--navy);
+  color: var(--text-primary);
 }
 
-/* Premium tech styling for Armor Ark */
+/* Armor Ark AI branding - adapted from native theme */
 .glass {
-  background: rgba(17, 17, 17, 0.8);
+  background: rgba(20, 35, 56, 0.85);
   backdrop-filter: blur(20px);
   border: 1px solid var(--border);
 }
@@ -31,6 +40,7 @@ body {
   transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), 
               box-shadow 0.2s cubic-bezier(0.23, 1, 0.32, 1),
               border-color 0.2s;
+  background: var(--surface);
 }
 
 .skill-card:hover {
@@ -61,8 +71,8 @@ body {
 
 .hero-grid {
   background-image: 
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -78,14 +88,26 @@ body {
   transform: scale(1.01);
 }
 
-/* Accessibility and performance */
+/* Accessibility */
 button:focus-visible,
 a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Accent color overrides */
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.border-accent {
+  border-color: var(--accent);
 }

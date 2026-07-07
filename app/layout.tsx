@@ -16,10 +16,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Armor Ark | Fortifying the Future of Intelligence",
-  description: "Armor Ark builds secure, high-performance AI systems and intuitive digital experiences. Powered by the Armor Ark Web Team — experts in performance-driven design, intuitive architecture, and cross-audience excellence.",
+  title: "ArmorArk AI | Native macOS Menu Bar AI Assistant",
+  description: "ArmorArk AI — A native macOS menu bar AI assistant with streaming chat, Knowledge Base (RAG), ReAct Agents, and Quick Command. Built by the Armor Ark Web Team.",
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "ArmorArk AI",
+    description: "Native macOS menu bar AI assistant with RAG, Agents, and more.",
+    images: [{ url: "/og-image.png" }], // placeholder, can add later
   },
 };
 
@@ -30,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}>
-      <body className="min-h-full flex flex-col bg-zinc-950 text-zinc-200">
+      <body className="min-h-full flex flex-col bg-[var(--navy)] text-[var(--text-primary)]">
         {children}
         <Toaster position="top-center" richColors closeButton />
       </body>
