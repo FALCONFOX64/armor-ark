@@ -1,12 +1,15 @@
 # Armor Ark Website — Continuous Improvement Loop
 
-This document defines the ongoing improvement process for the Armor Ark website. All changes follow a rigorous, elite-level workflow designed to maintain the highest standards of **high-performance**, **intuitive architecture**, and **cross-audience excellence** — the core capabilities of the Armor Ark Web Team.
+This document defines the ongoing improvement process for the Armor Ark website. All changes follow a rigorous, elite-level workflow designed to maintain the highest standards of professional positioning for **fractional CISO services and responsible AI programs**, enabled by the core capabilities of the Armor Ark Web Team.
 
-## Core Principles (from Web Team Skills)
+## Core Principles
 
+**Primary**: Clearly and credibly position Armor Ark as a trusted partner for fractional Chief Information Security Officer leadership and responsible AI governance, risk, security, and compliance.
+
+**Delivery Craft** (Web Team Skills):
 1. **High-Performance Visual Systems** — Every change must preserve or improve Core Web Vitals, animation fluidity, and load performance.
 2. **Intuitive Information Architecture** — Navigation, content hierarchy, and user flows must remain crystal clear and accessible.
-3. **Cross-Audience Experience Design** — Interfaces must delight technical stakeholders (engineers, researchers) while remaining approachable for everyday users and decision makers.
+3. **Cross-Audience Experience Design** — Interfaces must delight technical stakeholders (CISOs, AI leads, risk teams) while remaining approachable for executives, boards, and non-technical decision makers.
 
 ## The Elite Improvement Loop
 
@@ -16,6 +19,7 @@ We use a structured, multi-skill agentic process for all meaningful work.
 - For any new feature, major refactor, or content overhaul:
   - Spawn a design subagent or run the full design process.
   - Output: Polished design document + PR plan (topologically sorted tasks).
+- Primary goal: Strengthen Armor Ark's positioning as fractional CISO + responsible AI leader.
 - Reference: The three Web Team skills must be explicitly addressed in the design.
 
 ### 2. Implementation (Use `elite-software-engineer`)
@@ -37,7 +41,8 @@ We use a structured, multi-skill agentic process for all meaningful work.
 
 ### 5. Content & Narrative Polish (Use `elite-viral-tech-writer`)
 - For copy, case studies, or marketing sections, apply elite tech writing standards.
-- Ensure messaging works for both technical and non-technical readers.
+- Messaging must speak credibly to CISOs, heads of AI/ML, risk & compliance officers, general counsel, and boards.
+- Ensure it works for both technical and non-technical executive readers.
 
 ### 6. Deployment & Reliability (Use `elite-devops-engineer`)
 - Preview deployments, monitoring, and rollback plans.
@@ -47,15 +52,17 @@ We use a structured, multi-skill agentic process for all meaningful work.
 
 ### For Humans
 1. Open a GitHub Issue using the **"Website Improvement"** template (see `.github/ISSUE_TEMPLATE/`).
-2. Tag with `web-team` or specific skill area.
-3. The issue should reference which Web Team capability is being advanced.
+2. Tag with `web-team` or appropriate area.
+3. The issue must reference:
+   - How the change advances Armor Ark's fractional CISO / responsible AI positioning
+   - Which Web Team capability is being advanced.
 
 ### For Agents / Autonomous Work
 Use the following spawn pattern:
 
 ```bash
 # Example: Major redesign of a section
-spawn_subagent --subagent_type=design --prompt="Design an improved version of the Expertise section using the three Web Team skills. Produce a full design doc + PR plan."
+spawn_subagent --subagent_type=design --prompt="Design an improved version of the Services or About section that more strongly positions Armor Ark as a fractional CISO and responsible AI partner. Reference the three Web Team skills. Produce a full design doc + PR plan."
 
 # Then implement
 spawn_subagent --subagent_type=general-purpose --prompt="Follow the PR plan from the design doc. Use elite-software-engineer practices..."
@@ -70,10 +77,13 @@ spawn_subagent --subagent_type=general-purpose --prompt="Act as elite-validation
 ## Repository Standards
 
 - Main branch is protected. All work happens on feature branches.
-- Every PR must link to an issue and describe impact against the three skills.
+- Every PR must link to an issue and describe:
+  - Impact on fractional CISO / responsible AI positioning and credibility
+  - Impact against the three Web Team skills
 - Performance budgets: LCP < 1.8s, INP < 150ms on 4G.
 - All new components must include proper ARIA and keyboard support.
 - Reference the original Web Team skills repo: https://github.com/FALCONFOX64/web-team-skills
+- All content must be appropriate for a professional services firm serving security and AI governance leaders.
 
 ## Tools & Stack
 
@@ -93,7 +103,7 @@ git checkout -b feat/improve-hero
 # Open PR referencing the issue + Web Team skills
 ```
 
-This loop ensures the Armor Ark website remains a living demonstration of the Web Team's capabilities.
+This loop ensures the Armor Ark website remains the clearest, most credible expression of our fractional CISO and responsible AI practice — and a living demonstration of the Web Team's delivery excellence.
 
 ---
 

@@ -1,23 +1,32 @@
 # Armor Ark
 
-**Official website for Armor Ark** — Fortifying the future of intelligence.
+**Fractional CISO & Responsible AI**
 
-Built by the **Armor Ark Web Team** using their signature methodology:
+Armor Ark provides fractional Chief Information Security Officer services and responsible AI governance programs. We help organizations adopt AI securely, ethically, and with the accountability that boards, regulators, and customers require.
 
-- **High-Performance Visual Systems**
-- **Intuitive Information Architecture**
-- **Cross-Audience Experience Design**
+Our mission: deliver senior security leadership and ethical AI frameworks on flexible terms so companies can innovate rapidly without accumulating unacceptable risk or compliance debt.
 
-This site is a living demonstration of modern web engineering excellence: visually compelling, ruthlessly performant, deeply intuitive, and equally effective for technical stakeholders and everyday users.
+## Services
 
-## Tech Stack
+- **Fractional CISO Services** — Embedded strategic security leadership: risk assessments, AI security program development, board reporting, incident readiness, and ongoing advisory.
+- **Responsible AI Governance** — Ethical frameworks, bias audits, transparency programs, policy and accountability structures aligned to the EU AI Act, NIST AI RMF, and ISO/IEC 42001.
+- **AI Security & Risk Management** — Adversarial testing, prompt injection defenses, LLM supply chain security, red teaming, and continuous monitoring for AI-specific threats.
+- **AI Compliance & Assurance** — Audit-ready documentation, model governance, third-party assessments, and evidence packages for regulators and stakeholders.
 
-- Next.js 15 (App Router)
-- TypeScript
-- Tailwind CSS + custom design system
-- Framer Motion (micro-interactions)
-- Lucide React (icons)
-- Sonner (toasts)
+## Delivery Craft — The Armor Ark Web Team
+
+The secure dashboards, governance portals, risk visualizations, and reporting interfaces we provide to clients are built by the Armor Ark Web Team. This site demonstrates the three capabilities we apply to every client deliverable:
+
+- High-Performance Visual Systems
+- Intuitive Information Architecture
+- Cross-Audience Experience Design
+
+## Tech Stack (for this site)
+
+- Next.js 15 (App Router) + TypeScript
+- Tailwind CSS + custom design tokens
+- Framer Motion (lightweight micro-interactions)
+- Accessible, high-performance, production-grade by design
 
 ## Local Development
 
@@ -25,38 +34,9 @@ This site is a living demonstration of modern web engineering excellence: visual
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
 ## Continuous Improvement
 
-See [IMPROVEMENT_LOOP.md](./IMPROVEMENT_LOOP.md) for the full agentic + elite-skills process used to evolve this site over time.
-
-The loop combines:
-- Design skill for planning
-- Elite Software Engineer practices for implementation
-- Elite Validation Engineer for testing
-- Review skill for quality
-- And more
-
-## Web Team Skills
-
-The site is explicitly built around the three foundational skills documented in the companion repository:
-
-https://github.com/FALCONFOX64/web-team-skills
-
-## Deployment
-
-Recommended: Vercel (one-click from this repo).
-
-Performance budgets are enforced through the improvement loop.
-
-## Contributing
-
-All contributions should follow the process in `IMPROVEMENT_LOOP.md`.
-
-1. Reference the Web Team skills
-2. Use the design → implement → validate → review flow
-3. Ensure the change advances at least one of the three core capabilities
+This project follows a structured elite-skills improvement loop (see `IMPROVEMENT_LOOP.md` and `AGENTS.md`). All work prioritizes clear representation of Armor Ark as a fractional CISO and responsible AI partner while advancing the Web Team's delivery standards.
 
 ## License
 
@@ -64,4 +44,15 @@ MIT
 
 ---
 
-Crafted with precision by the Armor Ark Web Team.
+Positioned and crafted for leaders building responsibly with AI.
+
+## Deployment
+
+This site deploys automatically to Namecheap cPanel (server91.web-hosting.com) from GitHub.
+
+See [DEPLOY-NAMECHEAP.md](./DEPLOY-NAMECHEAP.md) for full setup and instructions.
+
+- GitHub Actions (recommended): Push to `main` → builds static site → deploys via SFTP (port 21098).
+- Alternative: cPanel Git™ Version Control + `.cpanel.yml`.
+
+Required GitHub secrets: `FTP_USERNAME`, `FTP_PASSWORD` (create a dedicated FTP account in cPanel).

@@ -1,0 +1,40 @@
+name: Deploy to cPanel (austinzierke.com)
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:   # Allows manual run from GitHub UI
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Deploy to cPanel via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ftp.austinzierke.com
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftps
+          local-dir: ./out/
+          server-dir: public_html/
+          # dangerous-clean-slate: false   # Set to true only if you want to delete all files first (use carefully)

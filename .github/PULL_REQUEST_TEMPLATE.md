@@ -1,7 +1,8 @@
 ## Summary
-<!-- One paragraph summary of the change -->
+<!-- One paragraph summary of the change. Include how it strengthens Armor Ark's positioning as a fractional CISO & responsible AI services firm. -->
 
-## Web Team Skills Impact
+## Positioning & Web Team Skills Impact
+- [ ] Strengthens fractional CISO / Responsible AI positioning and credibility
 - [ ] High-Performance Visual Systems
 - [ ] Intuitive Information Architecture  
 - [ ] Cross-Audience Experience Design

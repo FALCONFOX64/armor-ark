@@ -1,13 +1,16 @@
 ---
 name: Website Improvement
-about: Propose an improvement to the Armor Ark website that advances Web Team capabilities
+about: Propose an improvement to the Armor Ark website that strengthens fractional CISO & Responsible AI positioning and advances Web Team capabilities
 title: '[Web] '
 labels: ['web-team', 'improvement']
 assignees: ''
 ---
 
 ## Context
-<!-- Why is this change needed? What user or business problem does it solve? -->
+<!-- Why is this change needed? What user or business problem does it solve? How does it help position Armor Ark as a fractional CISO and responsible AI partner? -->
+
+## Positioning Impact
+<!-- Briefly describe how this makes Armor Ark's fractional CISO / responsible AI offering clearer or more credible. -->
 
 ## Web Team Skill(s) Advanced
 - [ ] High-Performance Visual Systems

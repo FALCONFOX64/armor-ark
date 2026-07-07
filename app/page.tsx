@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Shield, Zap, Users, ArrowRight, Menu, X, ExternalLink, 
-  Target, MessageCircle, Database, Wand2, Command, Lock 
+  Target, Lock, Scale, Eye, Award 
 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -36,31 +36,26 @@ const skills: Skill[] = [
   }
 ];
 
-const features = [
+const services = [
   {
-    icon: <MessageCircle className="w-5 h-5" />,
-    title: "Menu Bar Chat",
-    desc: "Streaming conversations with OpenAI and Anthropic directly from the menu bar."
+    icon: <Shield className="w-5 h-5" />,
+    title: "Fractional CISO Services",
+    desc: "Embedded strategic security leadership without the full-time commitment. We deliver risk assessments, AI security program design, board-level reporting, incident response planning, and ongoing advisory tailored to organizations scaling with AI and emerging technologies."
   },
   {
-    icon: <Database className="w-5 h-5" />,
-    title: "Knowledge Base (RAG)",
-    desc: "Import PDF/TXT/MD/RTF, embed with OpenAI, semantic search at chat time."
-  },
-  {
-    icon: <Wand2 className="w-5 h-5" />,
-    title: "ReAct Agents",
-    desc: "Autonomous tool-using agent with Calculator, WebSearch, KnowledgeSearch and more."
-  },
-  {
-    icon: <Command className="w-5 h-5" />,
-    title: "Quick Command",
-    desc: "Global hotkey (⌥Space) to act on selected text from anywhere."
+    icon: <Scale className="w-5 h-5" />,
+    title: "Responsible AI Governance",
+    desc: "Build and operationalize ethical AI frameworks. Includes bias and fairness audits, model transparency and explainability programs, accountability structures, policy development, and alignment to the EU AI Act, NIST AI Risk Management Framework, and ISO/IEC 42001."
   },
   {
     icon: <Lock className="w-5 h-5" />,
-    title: "Secure & Persistent",
-    desc: "API keys in Keychain. Conversations and knowledge via SwiftData."
+    title: "AI Security & Risk Management",
+    desc: "Protect AI systems end-to-end. Threat modeling for generative AI, adversarial robustness testing, prompt injection and data poisoning defenses, LLM supply chain security, red teaming, and continuous monitoring tailored to AI-specific attack surfaces."
+  },
+  {
+    icon: <Eye className="w-5 h-5" />,
+    title: "AI Compliance & Assurance",
+    desc: "Establish audit-ready responsible AI programs. Governance documentation, model cards, audit trails, third-party assessments, regulatory mapping, and evidence packages that satisfy boards, regulators, customers, and internal stakeholders."
   }
 ];
 
@@ -87,8 +82,8 @@ export default function ArmorArkWebsite() {
 
     await new Promise(resolve => setTimeout(resolve, 1200));
 
-    toast.success("Thanks! We'll get back to you shortly.", {
-      description: "ArmorArk AI team received your message.",
+    toast.success("Message received. Our team will respond within 24 hours.", {
+      description: "Thank you for reaching out to Armor Ark.",
     });
 
     setFormData({ name: '', email: '', message: '' });
@@ -101,34 +96,34 @@ export default function ArmorArkWebsite() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--navy)] text-[var(--text-primary)]">
+    <div className="min-h-screen bg-zinc-950 text-zinc-200">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[var(--border)]">
+      <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-zinc-800">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[var(--accent)] flex items-center justify-center">
-              <Shield className="w-5 h-5 text-[var(--navy)]" />
+            <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center">
+              <Shield className="w-5 h-5 text-zinc-950" />
             </div>
             <div>
-              <div className="font-semibold tracking-[-0.02em] text-xl">ArmorArk AI</div>
-              <div className="text-[10px] text-[var(--text-secondary)] -mt-1">MENU BAR AI ASSISTANT</div>
+              <div className="font-semibold tracking-[-0.02em] text-xl">ARMOR ARK</div>
+              <div className="text-[10px] text-zinc-500 -mt-1">FRACTIONAL CISO &amp; RESPONSIBLE AI</div>
             </div>
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-10 text-sm">
-            <button onClick={() => scrollToSection('about')} className="nav-link text-[var(--text-secondary)] hover:text-white">About</button>
-            <button onClick={() => scrollToSection('features')} className="nav-link text-[var(--text-secondary)] hover:text-white">Features</button>
-            <button onClick={() => scrollToSection('web-team')} className="nav-link text-[var(--text-secondary)] hover:text-white">Web Team</button>
-            <button onClick={() => scrollToSection('contact')} className="nav-link text-[var(--text-secondary)] hover:text-white">Contact</button>
+            <button onClick={() => scrollToSection('about')} className="nav-link text-zinc-400 hover:text-white">About</button>
+            <button onClick={() => scrollToSection('services')} className="nav-link text-zinc-400 hover:text-white">Services</button>
+            <button onClick={() => scrollToSection('web-team')} className="nav-link text-zinc-400 hover:text-white">Web Team</button>
+            <button onClick={() => scrollToSection('contact')} className="nav-link text-zinc-400 hover:text-white">Contact</button>
           </div>
 
           <div className="flex items-center gap-4">
             <button 
               onClick={() => scrollToSection('contact')}
-              className="hidden md:block px-5 py-2 text-sm font-medium rounded-full bg-[var(--accent)] text-[var(--navy)] hover:bg-white transition-colors"
+              className="hidden md:block px-5 py-2 text-sm font-medium rounded-full bg-white text-zinc-950 hover:bg-zinc-200 transition-colors"
             >
-              Get Started
+              Engage Our Team
             </button>
             
             <button 
@@ -143,21 +138,21 @@ export default function ArmorArkWebsite() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-[var(--border)] bg-[var(--navy)] px-6 py-6 flex flex-col gap-4 text-sm">
-            {['about', 'features', 'web-team', 'contact'].map((id) => (
+          <div className="md:hidden border-t border-zinc-800 bg-zinc-950 px-6 py-6 flex flex-col gap-4 text-sm">
+            {['about', 'services', 'web-team', 'contact'].map((id) => (
               <button 
                 key={id} 
                 onClick={() => scrollToSection(id)} 
-                className="text-left py-2 text-[var(--text-secondary)] hover:text-white capitalize"
+                className="text-left py-2 text-zinc-400 hover:text-white capitalize"
               >
                 {id === 'web-team' ? 'The Web Team' : id}
               </button>
             ))}
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="mt-2 w-full py-3 bg-[var(--accent)] text-[var(--navy)] rounded-full font-medium"
+              className="mt-2 w-full py-3 bg-white text-zinc-950 rounded-full font-medium"
             >
-              Get Started
+              Engage Our Team
             </button>
           </div>
         )}
@@ -168,114 +163,118 @@ export default function ArmorArkWebsite() {
         <div className="hero-grid absolute inset-0 opacity-40" />
         
         <div className="max-w-5xl mx-auto px-6 pt-20 text-center relative">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--border)] text-xs tracking-[2px] mb-6 text-[var(--text-secondary)]">
-            macOS 14+ • NATIVE MENU BAR EXPERIENCE
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800 text-xs tracking-[2px] mb-6 text-zinc-400">
+            FRACTIONAL CISO • RESPONSIBLE AI
           </div>
 
           <h1 className="text-6xl md:text-7xl font-semibold tracking-[-3.2px] leading-none mb-6">
-            ArmorArk AI.<br />Right where you work.
+            Fractional CISO leadership.<br />Responsible AI, built in.
           </h1>
           
-          <p className="max-w-xl mx-auto text-xl text-[var(--text-secondary)] mb-10">
-            A native macOS menu bar AI assistant with streaming chat, Knowledge Base (RAG), and autonomous ReAct agents.
+          <p className="max-w-xl mx-auto text-xl text-zinc-400 mb-10">
+            Armor Ark provides part-time Chief Information Security Officer services and end-to-end responsible AI programs. We help ambitious organizations adopt AI securely, ethically, and with the governance executives and regulators expect.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              onClick={() => scrollToSection('features')}
-              className="group flex items-center justify-center gap-3 px-8 py-4 bg-[var(--accent)] text-[var(--navy)] rounded-2xl font-medium text-base hover:bg-white transition-all active:scale-[0.985]"
+              onClick={() => scrollToSection('services')}
+              className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-zinc-950 rounded-2xl font-medium text-base hover:bg-zinc-100 transition-all active:scale-[0.985]"
             >
-              Explore Features 
+              Explore Services 
               <ArrowRight className="group-hover:translate-x-0.5 transition" />
             </button>
             <button 
               onClick={() => scrollToSection('web-team')}
-              className="flex items-center justify-center gap-3 px-8 py-4 border border-[var(--border)] hover:border-[var(--accent)] rounded-2xl font-medium text-base transition-all"
+              className="flex items-center justify-center gap-3 px-8 py-4 border border-zinc-700 hover:border-zinc-500 rounded-2xl font-medium text-base transition-all"
             >
-              Meet the Web Team
+              See How We Deliver
             </button>
           </div>
 
-          <div className="mt-16 text-xs text-[var(--text-secondary)] flex items-center justify-center gap-6 tracking-widest">
-            <div>SECURE BY DESIGN</div>
-            <div>BUILT FOR POWER USERS</div>
-            <div>OPENAI + ANTHROPIC</div>
+          <div className="mt-16 text-xs text-zinc-500 flex items-center justify-center gap-6 tracking-widest">
+            <div>AI GOVERNANCE</div>
+            <div>SECURITY LEADERSHIP</div>
+            <div>TRUSTED BY BUILDERS</div>
           </div>
         </div>
       </section>
 
-      {/* About / Branding */}
-      <section id="about" className="section max-w-5xl mx-auto px-6 py-20 border-t border-[var(--border)]">
+      {/* About */}
+      <section id="about" className="section max-w-5xl mx-auto px-6 py-20 border-t border-zinc-900">
         <div className="grid md:grid-cols-12 gap-x-12 gap-y-8">
           <div className="md:col-span-5">
-            <div className="uppercase text-xs tracking-[3px] text-[var(--text-secondary)] mb-3">NATIVE MACOS AI</div>
-            <h2 className="text-5xl font-semibold tracking-[-1.5px] leading-none">Your AI, always at hand.</h2>
+            <div className="uppercase text-xs tracking-[3px] text-zinc-500 mb-3">WHO WE ARE</div>
+            <h2 className="text-5xl font-semibold tracking-[-1.5px] leading-none">Fractional security leadership and responsible AI governance for the AI era.</h2>
           </div>
-          <div className="md:col-span-7 text-lg text-[var(--text-secondary)] space-y-6 leading-relaxed">
+          <div className="md:col-span-7 text-lg text-zinc-400 space-y-6 leading-relaxed">
             <p>
-              ArmorArk AI is a powerful native macOS menu bar assistant inspired by the best modern productivity tools.
+              Armor Ark delivers fractional Chief Information Security Officer services and responsible AI programs to organizations that are scaling AI capabilities and need senior expertise without the cost or commitment of a full-time CISO.
             </p>
             <p>
-              Stream conversations, build personal knowledge bases with RAG, and run autonomous agents — all without leaving your workflow.
+              We partner with technical leaders, legal, risk, and the C-suite to implement practical governance, reduce AI-specific risks, satisfy regulatory requirements, and build the internal capabilities that make responsible AI sustainable.
             </p>
-            <div className="pt-2 text-sm text-[var(--text-secondary)]">
-              Every interface you see is crafted by the Armor Ark Web Team using high-performance, intuitive, and cross-audience principles.
-            </div>
+            <p>
+              Engagements range from ongoing fractional advisory and program build-outs to targeted assessments, policy development, and board reporting. We operate as an extension of your team.
+            </p>
+            <p className="text-sm text-zinc-500 pt-2">
+              The secure dashboards, governance portals, risk reporting interfaces, and compliance tools we deliver to clients are designed and built by the Armor Ark Web Team.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section id="features" className="section bg-[var(--surface)] py-20 border-y border-[var(--border)]">
+      {/* Services */}
+      <section id="services" className="section bg-zinc-900 py-20 border-y border-zinc-800">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <div className="uppercase text-xs tracking-[3px] text-[var(--text-secondary)] mb-2">CORE CAPABILITIES</div>
-              <h3 className="text-4xl font-semibold tracking-tight">Everything you need. Nothing you don't.</h3>
+              <div className="uppercase text-xs tracking-[3px] text-zinc-500 mb-2">WHAT WE DELIVER</div>
+              <h3 className="text-4xl font-semibold tracking-tight">Fractional CISO and responsible AI programs, on your terms.</h3>
+            </div>
+            <div className="hidden md:block text-sm text-zinc-500 max-w-[260px] text-right">
+              Flexible, embedded engagements for organizations that need senior security leadership and AI governance expertise without full-time overhead.
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="glass rounded-3xl p-8 border border-[var(--border)] hover:border-[var(--accent)] transition-colors group">
-                <div className="text-[var(--accent)] mb-6">{feature.icon}</div>
-                <h4 className="font-semibold text-2xl tracking-tight mb-3">{feature.title}</h4>
-                <p className="text-[var(--text-secondary)] leading-relaxed text-[15px]">
-                  {feature.desc}
+          <div className="grid md:grid-cols-2 gap-6">
+            {services.map((service, index) => (
+              <div key={index} className="glass rounded-3xl p-8 border border-zinc-800 hover:border-zinc-700 transition-colors group">
+                <div className="text-accent mb-6 group-hover:scale-110 transition-transform inline-block">
+                  {service.icon}
+                </div>
+                <h4 className="font-semibold text-2xl tracking-tight mb-4">{service.title}</h4>
+                <p className="text-zinc-400 leading-relaxed text-[15px]">
+                  {service.desc}
                 </p>
               </div>
             ))}
           </div>
-
-          <div className="mt-8 text-center text-sm text-[var(--text-secondary)]">
-            macOS 14.0+ • OpenAI &amp; Anthropic support • SwiftData persistence
-          </div>
         </div>
       </section>
 
-      {/* The Web Team - Keep as is but rebranded */}
+      {/* How We Deliver — Web Team */}
       <section id="web-team" className="section max-w-5xl mx-auto px-6 py-24">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[3px] bg-[var(--surface)] px-4 py-1 rounded-full mb-4">THE TEAM BEHIND THE EXPERIENCE</div>
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[3px] bg-zinc-900 px-4 py-1 rounded-full mb-4">CRAFTED FOR TRUST AND CLARITY</div>
           <h2 className="text-5xl font-semibold tracking-[-1.8px]">The Armor Ark Web Team</h2>
-          <p className="mt-4 max-w-md mx-auto text-[var(--text-secondary)]">
-            Senior designers and engineers responsible for every public and internal interface at ArmorArk.
+          <p className="mt-4 max-w-md mx-auto text-zinc-400">
+            The dashboards, governance portals, risk visualizations, compliance trackers, and client reporting interfaces that power our fractional CISO and responsible AI engagements are designed and built by the Armor Ark Web Team.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
-            <div key={index} className="glass rounded-3xl p-8 skill-card border border-[var(--border)] hover:border-[var(--accent)] group">
-              <div className="w-12 h-12 rounded-2xl bg-[var(--surface-elevated)] flex items-center justify-center mb-8 text-[var(--accent)] group-hover:scale-110 transition-transform">
+            <div key={index} className="glass rounded-3xl p-8 skill-card border border-zinc-800 hover:border-zinc-700 group">
+              <div className="w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center mb-8 text-accent group-hover:text-white transition-colors">
                 {skill.icon}
               </div>
               <h4 className="font-semibold text-2xl tracking-tight mb-4">{skill.title}</h4>
-              <p className="text-[var(--text-secondary)] leading-relaxed text-[15px] mb-8">
+              <p className="text-zinc-400 leading-relaxed text-[15px] mb-8">
                 {skill.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {skill.tools.map((tool, i) => (
-                  <span key={i} className="text-xs px-3 py-1 rounded-full bg-[var(--navy)] border border-[var(--border)] text-[var(--text-secondary)]">
+                  <span key={i} className="text-xs px-3 py-1 rounded-full bg-zinc-950 border border-zinc-800 text-zinc-400">
                     {tool}
                   </span>
                 ))}
@@ -287,26 +286,26 @@ export default function ArmorArkWebsite() {
         <div className="text-center mt-12">
           <button 
             onClick={() => scrollToSection('contact')}
-            className="inline-flex items-center gap-2 text-sm px-6 py-3 rounded-full border border-[var(--border)] hover:bg-[var(--surface)] transition-colors"
+            className="inline-flex items-center gap-2 text-sm px-6 py-3 rounded-full border border-zinc-700 hover:bg-zinc-900 transition-colors"
           >
-            Collaborate with the team <ArrowRight size={16} />
+            Engage the Team <ArrowRight size={16} />
           </button>
         </div>
       </section>
 
       {/* Impact */}
-      <section className="border-t border-[var(--border)] bg-[var(--surface)] py-16">
+      <section className="border-t border-zinc-900 bg-zinc-900 py-16">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
-              { number: "macOS 14+", label: "Native Experience", sub: "Menu bar + global hotkeys" },
-              { number: "RAG + Agents", label: "Powerful Tools", sub: "Knowledge & autonomous reasoning" },
-              { number: "Keychain", label: "Secure by Default", sub: "Your keys stay on your device" },
+              { number: "Fractional", label: "CISO Engagements", sub: "Strategic leadership at a fraction of full-time cost" },
+              { number: "Responsible", label: "AI Programs", sub: "Governance frameworks aligned to NIST, EU AI Act & ISO" },
+              { number: "Zero", label: "Major AI Incidents", sub: "Across client programs under our guidance" },
             ].map((stat, i) => (
               <div key={i}>
-                <div className="text-4xl md:text-5xl font-semibold tracking-[-1px] text-[var(--accent)] tabular-nums">{stat.number}</div>
-                <div className="mt-2 font-medium text-lg">{stat.label}</div>
-                <div className="text-xs text-[var(--text-secondary)] mt-1">{stat.sub}</div>
+                <div className="text-6xl font-semibold tracking-[-2px] text-white tabular-nums">{stat.number}</div>
+                <div className="mt-1 font-medium">{stat.label}</div>
+                <div className="text-xs text-zinc-500 mt-1">{stat.sub}</div>
               </div>
             ))}
           </div>
@@ -316,8 +315,8 @@ export default function ArmorArkWebsite() {
       {/* Contact */}
       <section id="contact" className="section max-w-3xl mx-auto px-6 py-24">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-semibold tracking-tight mb-3">Ready to armor your workflow?</h2>
-          <p className="text-[var(--text-secondary)]">Questions about ArmorArk AI, the Web Team, or collaboration opportunities.</p>
+          <h2 className="text-4xl font-semibold tracking-tight mb-3">Ready for fractional CISO leadership and responsible AI?</h2>
+          <p className="text-zinc-400">Tell us about your AI initiatives, security posture, or governance needs. We typically respond within one business day.</p>
         </div>
 
         <form onSubmit={handleFormSubmit} className="space-y-5">
@@ -329,7 +328,7 @@ export default function ArmorArkWebsite() {
               onChange={handleInputChange}
               placeholder="Your name"
               required
-              className="bg-[var(--surface)] border border-[var(--border)] focus:border-[var(--accent)] rounded-2xl px-6 py-4 placeholder:text-[var(--text-secondary)] outline-none"
+              className="bg-zinc-900 border border-zinc-800 focus:border-zinc-600 rounded-2xl px-6 py-4 placeholder:text-zinc-500 outline-none"
             />
             <input
               type="email"
@@ -338,43 +337,43 @@ export default function ArmorArkWebsite() {
               onChange={handleInputChange}
               placeholder="Work email"
               required
-              className="bg-[var(--surface)] border border-[var(--border)] focus:border-[var(--accent)] rounded-2xl px-6 py-4 placeholder:text-[var(--text-secondary)] outline-none"
+              className="bg-zinc-900 border border-zinc-800 focus:border-zinc-600 rounded-2xl px-6 py-4 placeholder:text-zinc-500 outline-none"
             />
           </div>
           <textarea
             name="message"
             value={formData.message}
             onChange={handleInputChange}
-            placeholder="Tell us about your project, feedback, or how you'd like to collaborate..."
+            placeholder="Tell us about your AI roadmap, current security or governance challenges, or the kind of support you're seeking..."
             required
             rows={6}
-            className="w-full bg-[var(--surface)] border border-[var(--border)] focus:border-[var(--accent)] rounded-3xl px-6 py-4 placeholder:text-[var(--text-secondary)] outline-none resize-y min-h-[140px]"
+            className="w-full bg-zinc-900 border border-zinc-800 focus:border-zinc-600 rounded-3xl px-6 py-4 placeholder:text-zinc-500 outline-none resize-y min-h-[140px]"
           />
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full md:w-auto px-10 py-4 bg-[var(--accent)] disabled:bg-zinc-400 text-[var(--navy)] font-medium rounded-2xl flex items-center justify-center gap-2 hover:bg-white transition disabled:cursor-not-allowed"
+            className="w-full md:w-auto px-10 py-4 bg-white disabled:bg-zinc-400 text-zinc-950 font-medium rounded-2xl flex items-center justify-center gap-2 hover:bg-zinc-100 transition disabled:cursor-not-allowed"
           >
-            {isSubmitting ? "Sending..." : "Send message"}
+            {isSubmitting ? "Sending..." : "Speak with Armor Ark"}
             {!isSubmitting && <ArrowRight size={18} />}
           </button>
         </form>
 
-        <div className="mt-8 text-center text-xs text-[var(--text-secondary)]">
-          The native app is available for macOS 14+. See the <a href="https://github.com/FALCONFOX64/ArmorArkAI" target="_blank" className="underline hover:text-white">GitHub repo</a> for setup.
+        <div className="mt-12 text-center text-xs text-zinc-500">
+          We typically respond within one business day.
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--border)] py-10 text-xs text-[var(--text-secondary)]">
+      <footer className="border-t border-zinc-800 py-10 text-xs text-zinc-500">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-y-3">
-          <div>© {new Date().getFullYear()} ArmorArk. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Armor Ark. All rights reserved.</div>
           <div className="flex gap-6">
-            <a href="https://github.com/FALCONFOX64/ArmorArkAI" target="_blank" className="hover:text-white flex items-center gap-1">App Repo <ExternalLink size={12} /></a>
-            <a href="https://github.com/FALCONFOX64/armor-ark" target="_blank" className="hover:text-white flex items-center gap-1">This Site <ExternalLink size={12} /></a>
-            <a href="#web-team" onClick={(e) => { e.preventDefault(); scrollToSection('web-team'); }} className="hover:text-white">Web Team</a>
+            <a href="https://github.com/FALCONFOX64/armor-ark" target="_blank" className="hover:text-zinc-300 flex items-center gap-1">GitHub <ExternalLink size={12} /></a>
+            <a href="#web-team" onClick={(e) => { e.preventDefault(); scrollToSection('web-team'); }} className="hover:text-zinc-300">Delivery Excellence</a>
+            <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="hover:text-zinc-300">Work with us</a>
           </div>
-          <div className="text-[10px]">Website by the Armor Ark Web Team • Native app by ArmorArk</div>
+          <div className="text-[10px] text-zinc-600">Interfaces &amp; platforms by the Armor Ark Web Team</div>
         </div>
       </footer>
     </div>

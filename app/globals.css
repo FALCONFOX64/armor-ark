@@ -29,7 +29,7 @@ body {
   color: var(--text-primary);
 }
 
-/* Armor Ark AI branding - adapted from native theme */
+/* Armor Ark design tokens — navy/steel/accent from theme, adapted for services site */
 .glass {
   background: rgba(20, 35, 56, 0.85);
   backdrop-filter: blur(20px);
