@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --accent: #3b82f6;
+  --accent-dark: #2563eb;
+  --card: #111111;
+  --border: #27272a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  font-family: var(--font-geist-sans);
+}
+
+/* Premium tech styling for Armor Ark */
+.glass {
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+}
+
+.skill-card {
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), 
+              box-shadow 0.2s cubic-bezier(0.23, 1, 0.32, 1),
+              border-color 0.2s;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-color: var(--accent);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+.hero-grid {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.section {
+  scroll-margin-top: 80px;
+}
+
+.micro-interact {
+  transition: all 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.micro-interact:hover {
+  transform: scale(1.01);
+}
+
+/* Accessibility and performance */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
