@@ -7,13 +7,18 @@ deployment:
     # cPanel username: austvrud (document root)
     - export DEPLOYPATH=/home/austvrud/public_html/
 
+    # Install deps and build the static site (Next.js export)
+    # This allows deploying from source without committing the built 'out/' folder.
+    - npm ci
+    - npm run build
+
     # Secure deploy: preserve existing .htaccess and important files.
     # Only remove generated static files if needed. Using find for safety.
     - find $DEPLOYPATH -mindepth 1 ! -name '.htaccess' ! -name '.well-known' -delete 2>/dev/null || true
 
-    # Deploy the static Next.js build output (built by GitHub Actions).
+    # Deploy the built static files.
     - /bin/cp -R out/* $DEPLOYPATH
 
-    # Copy .htaccess from repo root (for security headers, caching, routing).
+    # Ensure .htaccess is in place for security headers and routing.
     - /bin/cp -f .htaccess $DEPLOYPATH 2>/dev/null || true
 
