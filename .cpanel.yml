@@ -1,0 +1,18 @@
+---
+# .cpanel.yml — Deployment configuration for cPanel Git™ Version Control
+# This file must be in the ROOT of the repo (committed to GitHub)
+
+deployment:
+  tasks:
+    # cPanel username: austvrud (document root)
+    - export DEPLOYPATH=/home/austvrud/public_html/
+
+    # Clean the live site (removes old files). Comment this out if you want to preserve .htaccess or other files.
+    - /bin/rm -rf $DEPLOYPATH/*
+
+    # Deploy the static Next.js build output.
+    # The GitHub Actions workflow builds this for you automatically.
+    - /bin/cp -R out/* $DEPLOYPATH
+
+    # Optional: Preserve specific files (uncomment and adjust if needed)
+    # - /bin/cp -f .htaccess $DEPLOYPATH 2>/dev/null || true
